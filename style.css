@@ -1,0 +1,462 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Courier New", monospace;
+
+    background:
+        radial-gradient(
+            circle,
+            #e96b79 2px,
+            transparent 2px
+        ) 0 0 / 45px 45px;
+
+    background-color: #fff7f1;
+
+    color: #4b1717;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   СЕРДЕЧКИ НА ФОНЕ
+   ========================= */
+
+.hearts {
+    position: fixed;
+
+    inset: 15px;
+
+    color: #e96b79;
+
+    font-size: 22px;
+
+    line-height: 70px;
+
+    letter-spacing: 10px;
+
+    pointer-events: none;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   ГЛАВНОЕ ОКНО
+   ========================= */
+
+.window {
+    width: min(90vw, 520px);
+
+    background: #fff3e8;
+
+    border: 8px solid #ef633e;
+
+    box-shadow:
+        0 0 0 5px #ff9b72,
+        0 10px 0 #c9442b;
+
+    padding: 12px;
+
+    position: relative;
+}
+
+
+/* =========================
+   ВЕРХНЯЯ ПАНЕЛЬ
+   ========================= */
+
+.top-bar {
+    height: 55px;
+
+    border: 5px solid #ef633e;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 14px;
+
+    color: #ef633e;
+
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   СЕРДЕЧКИ СВЕРХУ
+   ========================= */
+
+.decor {
+    text-align: center;
+
+    color: #ef4c36;
+
+    font-size: 38px;
+
+    padding: 12px 0;
+}
+
+
+/* =========================
+   РОЗОВОЕ ОКНО
+   ========================= */
+
+.letter {
+    min-height: 350px;
+
+    border: 7px solid #ef633e;
+
+    background:
+        linear-gradient(
+            45deg,
+            #ffd5d5 25%,
+            transparent 25%
+        ) 0 0 / 18px 18px,
+
+        linear-gradient(
+            -45deg,
+            #ffd5d5 25%,
+            transparent 25%
+        ) 0 0 / 18px 18px,
+
+        #ffe9e9;
+
+    text-align: center;
+
+    padding: 25px 15px;
+}
+
+
+/* =========================
+   ТЕКСТ
+   ========================= */
+
+.question {
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin: 0 0 5px;
+}
+
+
+/* =========================
+   ПИКСЕЛЬНЫЙ КОТИК
+   ========================= */
+
+.pixel-cat {
+    position: relative;
+
+    width: 150px;
+
+    height: 150px;
+
+    margin: 5px auto 0;
+}
+
+
+/* Голова */
+
+.cat-head {
+    position: absolute;
+
+    left: 38px;
+
+    top: 30px;
+
+    width: 75px;
+
+    height: 65px;
+
+    background: #171717;
+
+    border: 5px solid #171717;
+
+    z-index: 2;
+}
+
+
+/* Ушки */
+
+.cat-ear {
+    position: absolute;
+
+    width: 35px;
+
+    height: 35px;
+
+    background: #171717;
+
+    top: 12px;
+
+    z-index: 1;
+}
+
+.cat-ear.left {
+    left: 35px;
+
+    transform: rotate(45deg);
+}
+
+.cat-ear.right {
+    right: 35px;
+
+    transform: rotate(45deg);
+}
+
+
+/* Глазки */
+
+.eye {
+    position: absolute;
+
+    color: white;
+
+    font-size: 18px;
+
+    top: 22px;
+}
+
+.left-eye {
+    left: 13px;
+}
+
+.right-eye {
+    right: 13px;
+}
+
+
+/* Нос */
+
+.nose {
+    position: absolute;
+
+    color: #ffb0b0;
+
+    font-size: 13px;
+
+    left: 30px;
+
+    top: 40px;
+}
+
+
+/* Тело */
+
+.cat-body {
+    position: absolute;
+
+    width: 65px;
+
+    height: 45px;
+
+    background: #171717;
+
+    left: 43px;
+
+    top: 88px;
+
+    border-radius:
+        5px
+        5px
+        20px
+        20px;
+
+    z-index: 1;
+}
+
+
+/* Хвост */
+
+.cat-tail {
+    position: absolute;
+
+    width: 55px;
+
+    height: 18px;
+
+    border:
+        9px solid #171717;
+
+    border-left: 0;
+
+    border-radius:
+        0
+        25px
+        25px
+        0;
+
+    right: 20px;
+
+    top: 90px;
+}
+
+
+/* =========================
+   БОЛЬШОЕ СЕРДЦЕ
+   ========================= */
+
+.heart {
+    color: #f2382f;
+
+    font-size: 75px;
+
+    line-height: 0.6;
+
+    margin-top: -5px;
+}
+
+
+/* =========================
+   КНОПКИ
+   ========================= */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    margin-top: 25px;
+}
+
+
+button {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #ef633e;
+
+    background: #fff3e8;
+
+    border: 4px solid #ef633e;
+
+    padding: 7px 18px;
+
+    cursor: pointer;
+}
+
+
+button:hover {
+    background: #ffd9d0;
+}
+
+
+/* =========================
+   ОБЛАСТЬ NO
+   ========================= */
+
+.no-wrapper {
+    position: relative;
+
+    width: 100px;
+
+    height: 55px;
+}
+
+
+#noBtn {
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    transition:
+        left 0.2s,
+        top 0.2s;
+}
+
+
+/* =========================
+   СООБЩЕНИЕ ПОСЛЕ YES
+   ========================= */
+
+.message {
+    position: fixed;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+
+    background: #fff3e8;
+
+    border: 6px solid #ef633e;
+
+    padding: 25px 35px;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    box-shadow:
+        8px 8px 0 #c9442b;
+
+    transition: 0.3s;
+
+    z-index: 10;
+}
+
+
+.message.show {
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+
+/* =========================
+   ТЕЛЕФОН
+   ========================= */
+
+@media (max-width: 500px) {
+
+    .window {
+        width: 88vw;
+    }
+
+    .question {
+        font-size: 16px;
+    }
+
+    .pixel-cat {
+        transform: scale(0.9);
+    }
+
+    .heart {
+        font-size: 65px;
+    }
+
+    .buttons {
+        gap: 20px;
+    }
+}
